@@ -229,3 +229,94 @@ REFERENCES `User_info` (
 );
 ```
 
+
+
+
+```
+
+
+
+CREATE or replace TABLE mov_accu
+(	
+	p_id VARCHAR(10) PRIMARY key,
+	genre VARCHAR(10) NOT null
+);
+
+DROP TABLE if EXISTS selected_Options;
+CREATE TABLE selected_Options (
+	id	varchar(10)	NULL,
+	preferred_category	varchar(10)	NULL,
+	preferred_genre	varchar(10)	NULL,
+	gender	varchar(10)	NULL,
+	age	int	NULL,
+	nation	varchar(5)	NOT NULL
+);
+
+INSERT INTO selected_Options VALUES('TDS', '영화',  '액션', '남자', 26, '한국');
+DROP TRIGGER if EXISTS TRIGGER_in;
+
+SELECT * FROM selected_Options;
+SELECT * FROM mov_accu;
+
+-- -------------------------------------------------insert
+
+delimiter $$
+CREATE TRIGGER TRIGGER_in
+AFTER INSERT
+ON selected_Options
+FOR EACH ROW -- 각 행에서 모두 실행
+BEGIN
+	INSERT INTO mov_accu
+		VALUES( new.id, new.preferred_genre );
+--	SELECT 영화장르, COUNT(*) 'CG' FROM  mov_accu
+--		GROUP BY 영화장르
+--		HAVING CG DESC ; 
+END $$
+delimiter ;
+
+-- ---------------------------------------------- delete
+
+delimiter $$
+CREATE TRIGGER TRIGGER_del
+AFTER DELETE 
+ON selected_Options
+FOR EACH ROW -- 각 행에서 모두 실행
+BEGIN
+   DELETE FROM mov_accu WHERE p_id = OLD.id;
+END $$
+delimiter ;
+
+SELECT * FROM selected_Options;
+SELECT * FROM mov_accu;
+INSERT INTO selected_Options VALUES('TDS', '영화',  '액션', '남자', 26, '한국');
+DELETE FROM selected_Options WHERE id = 'TWC';
+
+-- ----------------------------------------------------- update
+
+DROP TRIGGER if EXISTS trigger_upd;
+delimiter $$
+
+CREATE TRIGGER trigger_upd
+AFTER UPDATE
+ON selected_Options
+FOR EACH ROW
+BEGIN
+    -- 실행 구문
+    UPDATE mov_accu
+    SET genre = NEW.preferred_genre
+    WHERE p_id = NEW.id;
+END $$
+
+delimiter ;
+
+
+
+SELECT * FROM selected_Options;
+SELECT * FROM mov_accu;
+UPDATE selected_Options SET preferred_genre = '로맨스' WHERE id = 'TDS'; 
+
+
+
+
+```
+
