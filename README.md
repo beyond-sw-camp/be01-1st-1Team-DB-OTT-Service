@@ -88,7 +88,7 @@ OTT 서비스 회원정보
 
 System Architecture
 ======
-
+```
  CREATE TABLE `Payment_info` (
 	`Phone_num`	int	NULL,
 	`id`	varchar(10)	NULL,
@@ -229,3 +229,4 @@ ALTER TABLE `record` ADD CONSTRAINT `FK_User_info_TO_record_1` FOREIGN KEY (
 REFERENCES `User_info` (
 	`id`
 );
+```
