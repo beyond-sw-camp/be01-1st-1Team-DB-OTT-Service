@@ -231,5 +231,3 @@ REFERENCES `User_info` (
 );
 ```
 
-![Alt text](C:\Users\Playdata\Downloads\NETFLIX.png)
-
