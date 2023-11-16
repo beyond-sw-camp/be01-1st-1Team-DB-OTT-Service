@@ -230,6 +230,8 @@ REFERENCES `User_info` (
 ```
 
 
+Trigger 응용
+=======
 
 
 ```
