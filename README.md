@@ -88,3 +88,144 @@ OTT 서비스 회원정보
 
 System Architecture
 ======
+
+ CREATE TABLE `Payment_info` (
+	`Phone_num`	int	NULL,
+	`id`	varchar(10)	NULL,
+	`name`	varchar(10)	NULL,
+	`card_num`	int	NULL,
+	`card_cmp`	Varchar(10)	NULL
+);
+
+CREATE TABLE `Movie` (
+	`c_category`	varchar(10)	NULL,
+	`m_name`	varchar(10)	NOT NULL	COMMENT '영화이름',
+	`m_genre`	varchar(10)	NOT NULL	COMMENT '영화 장르',
+	`m_director`	varchar(10)	NOT NULL	COMMENT '영화감독',
+	`m_nation`	varchar(20)	NOT NULL	COMMENT '영화 제작 국가',
+	`m_rate`	int	NOT NULL	COMMENT '영화 평점',
+	`m_run`	time	NOT NULL	COMMENT '영화 러닝 타임',
+	`m_open`	date	NOT NULL	COMMENT '영화 개봉일'
+);
+
+CREATE TABLE `User_info` (
+	`id`	varchar(10)	NULL,
+	`pwd`	varchar(20)	NULL,
+	`sub`	smallint(1)	NOT NULL
+);
+
+CREATE TABLE `selected_Options table` (
+	`id`	varchar(10)	NULL,
+	`preferred_category`	varchar(10)	NULL,
+	`preferred_genre`	varchar(10)	NULL,
+	`gender`	smallint	NULL,
+	`age`	int	NULL,
+	`nation`	varchar(5)	NOT NULL
+);
+
+CREATE TABLE `Bank` (
+	`Phone_num`	int	NULL,
+	`card_num`	int	NULL,
+	`Field`	smallint	NULL,
+	`card_cmp`	varchar(10)	NOT NULL,
+	`name`	varchar(10)	NOT NULL
+);
+
+CREATE TABLE `Drama rating` (
+	`c_category`	varchar(10)	NULL,
+	`d_name`	varchar(10)	NULL,
+	`d_nation`	varchar(10)	NULL,
+	`rating`	int	NULL,
+	`f_rating`	int	NULL,
+	`d_genre`	varchar(10)	NULL
+);
+
+CREATE TABLE `New` (
+	`c_category`	varchar(10)	NULL,
+	`c_genre`	varchar(10)	NULL,
+	`c_uploaddate`	date	NULL,
+	`c_name`	varchar(10)	NULL
+);
+
+CREATE TABLE `record` (
+	`id`	varchar(10)	NULL,
+	`category`	varchar(10)	NULL,
+	`title`	varchar(10)	NULL,
+	`latest_point`	int	NULL,
+	`hitLastPoint`	smallint	NULL
+);
+
+ALTER TABLE `Payment_info` ADD CONSTRAINT `PK_PAYMENT_INFO` PRIMARY KEY (
+	`Phone_num`,
+	`id`
+);
+
+ALTER TABLE `Movie` ADD CONSTRAINT `PK_MOVIE` PRIMARY KEY (
+	`c_category`
+);
+
+ALTER TABLE `User_info` ADD CONSTRAINT `PK_USER_INFO` PRIMARY KEY (
+	`id`
+);
+
+ALTER TABLE `selected_Options table` ADD CONSTRAINT `PK_SELECTED_OPTIONS TABLE` PRIMARY KEY (
+	`id`
+);
+
+ALTER TABLE `Bank` ADD CONSTRAINT `PK_BANK` PRIMARY KEY (
+	`Phone_num`
+);
+
+ALTER TABLE `Drama rating` ADD CONSTRAINT `PK_DRAMA RATING` PRIMARY KEY (
+	`c_category`
+);
+
+ALTER TABLE `New` ADD CONSTRAINT `PK_NEW` PRIMARY KEY (
+	`c_category`
+);
+
+ALTER TABLE `record` ADD CONSTRAINT `PK_RECORD` PRIMARY KEY (
+	`id`
+);
+
+ALTER TABLE `Payment_info` ADD CONSTRAINT `FK_User_info_TO_Payment_info_1` FOREIGN KEY (
+	`id`
+)
+REFERENCES `User_info` (
+	`id`
+);
+
+ALTER TABLE `Movie` ADD CONSTRAINT `FK_New_TO_Movie_1` FOREIGN KEY (
+	`c_category`
+)
+REFERENCES `New` (
+	`c_category`
+);
+
+ALTER TABLE `selected_Options table` ADD CONSTRAINT `FK_User_info_TO_selected_Options table_1` FOREIGN KEY (
+	`id`
+)
+REFERENCES `User_info` (
+	`id`
+);
+
+ALTER TABLE `Bank` ADD CONSTRAINT `FK_Payment_info_TO_Bank_1` FOREIGN KEY (
+	`Phone_num`
+)
+REFERENCES `Payment_info` (
+	`Phone_num`
+);
+
+ALTER TABLE `Drama rating` ADD CONSTRAINT `FK_New_TO_Drama rating_1` FOREIGN KEY (
+	`c_category`
+)
+REFERENCES `New` (
+	`c_category`
+);
+
+ALTER TABLE `record` ADD CONSTRAINT `FK_User_info_TO_record_1` FOREIGN KEY (
+	`id`
+)
+REFERENCES `User_info` (
+	`id`
+);
