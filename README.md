@@ -230,3 +230,6 @@ REFERENCES `User_info` (
 	`id`
 );
 ```
+
+![image](https://github.com/beyond-sw-camp/be01-1st-1Team-1stPJ/assets/125641153/a9671d03-47e3-4a29-9e07-298b7f521560)
+
