@@ -320,7 +320,7 @@ Entity-Relationship model
 
 old
 ==========
-<img src="https://user-images.githubusercontent.com/51365114/119627750-716f3100-be47-11eb-8e83-686b23c2c161.png  width="200" height="400"/>
+<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/646ba48c-387c-478d-960a-b4ccd8a57a6e  width="200" height="400"/>
 
 ![IMG_6115](https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/646ba48c-387c-478d-960a-b4ccd8a57a6e ){: width="30%" height="30%"}
 
