@@ -24,9 +24,14 @@ OTT 서비스에 가입한 회원들의 결제와 영화 정보 그리고 제일
 OTT 서비스를 사용하면서 높은 시청률을 보유한 컨텐츠들에 대한 정보를 추가한다.
 
 
+
+
 프로젝트 배경
 ========
 요즘은 TV를 시청하는 경우보다 OTT 서비스를 이용하여 컨텐츠를 시청하거나, 유튜브 등의 매체를 사용하여 여가시간을 보내는 경우가 많다. 최근 OTT 서비스들이 비약적으로 발전함에 따라, 우리가 잘쓰고 있는 서비스에서 우리가 서비스를 이용하면서 아쉬웠던 부분들을 추가하고 싶어졌다.
+
+
+
 
 프로젝트 시나리오 (요구사항 분석)
 ======
@@ -96,7 +101,7 @@ OTT 서비스를 사용하면서 높은 시청률을 보유한 컨텐츠들에 �
 
 System Architecture
 ======
-```
+```SQL
 CREATE TABLE `Payment_info` (
 	`Phone_num`	int	NULL,
 	`id`	varchar(10)	NULL,
@@ -225,7 +230,7 @@ Trigger 응용
 =======
 
 
-```
+```SQL
 CREATE or replace TABLE mov_accu
 (	
 	p_id VARCHAR(10) PRIMARY key,
