@@ -295,11 +295,22 @@ SELECT * FROM selected_Options;
 SELECT * FROM mov_accu;
 UPDATE selected_Options SET preferred_genre = '로맨스' WHERE id = 'TDS'; 
 ```
+
 Entity-Relationship Diagram
-=======
+============
+
+
+
 ![OTTERD](https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/6ac56896-4833-42c9-b499-831d942f119d)
 
+
+
+
+
 Entity-Relationship model
-=======
+===========
+
+
+
 ![ER fixfix](https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/afe832e1-01be-4ca8-b9ab-0ed9333a801f)
 
