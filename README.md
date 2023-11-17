@@ -335,9 +335,9 @@ Entity-Relationship model
 
 (초기 구상)
 ==========
-<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/646ba48c-387c-478d-960a-b4ccd8a57a6e " width="33%" height="33%" />
-<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/ab0e5d24-449a-4df2-bc24-84375c48c035" width="33%" height="33%" />
-<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/e3f34367-d528-4255-b2c4-7e2f12ee988a" width="33%" height="33%" />
+<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/646ba48c-387c-478d-960a-b4ccd8a57a6e " width="32%" height="32%" />
+<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/ab0e5d24-449a-4df2-bc24-84375c48c035" width="32%" height="32%" />
+<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/e3f34367-d528-4255-b2c4-7e2f12ee988a" width="32%" height="32%" />
 
 >>처음 DB를 이용한 프로젝트를 구상하면서 OTT서비스의 컨텐츠 추천 시스템을 구상했고 구현하려 시도했다.
 여러 개의 아이디어는 선택에 도움을 줬다. 하지만 원하는 기능의 추가로 인하여 점점 처음과는 멀어지게 되는 경험을 했다.
