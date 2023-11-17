@@ -224,7 +224,10 @@ REFERENCES `User_info` (
 	`id`
 );
 ```
+테이블정보
+============
 
+<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/a19a1ac1-e4e8-4528-9520-2cfa68943897" width="80%" height="10%" />
 
 Trigger 응용
 =======
