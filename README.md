@@ -26,7 +26,7 @@ OTT 서비스를 사용하면서 높은 시청률을 보유한 컨텐츠들에 �
 
 
 >OTT 서비스 회원정보
-1. 아이디
+1. 아이디🔑
 2. 비밀번호
 3. 구독여부
      
@@ -38,6 +38,7 @@ OTT 서비스를 사용하면서 높은 시청률을 보유한 컨텐츠들에 �
 5. 국가
     
 >시청정보
+1. 아이디
 1. 영화 이름
 2. 마지막 시청 지점
 3. 시청 완료 여부
@@ -48,7 +49,7 @@ OTT 서비스를 사용하면서 높은 시청률을 보유한 컨텐츠들에 �
 2. 이름
 3. 카드번호
 4. 카드사
-5. 휴대폰 번호
+5. 휴대폰 번호🔑
     
 >은행
 1. 휴대폰 번호
@@ -67,21 +68,23 @@ OTT 서비스를 사용하면서 높은 시청률을 보유한 컨텐츠들에 �
 7. 영화 개봉일
      
 >신규 컨텐츠
-1. 컨텐츠 타입
+1. 컨텐츠 타입🔑
 2. 장르
 3. 컨텐츠 업로드 날짜
 4. 컨텐츠 이름
 
+
 >시청률
-1. 컨텐츠 타입
-2. 드라마 이름
-3. 제작 나라
-4. 국내 시청률
-5. 해외 시청률
-6. 드라마 장르
+1. 드라마 이름
+2. 제작 나라
+3. 국내 시청률
+4. 해외 시청률
+5. 드라마 장르
 
 
-
+>트리거
+1. 아이디
+2. 영화 장르
 
 
 System Architecture
@@ -318,13 +321,17 @@ Entity-Relationship model
 
 
 
-old
+(초기 구상)
 ==========
-<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/646ba48c-387c-478d-960a-b4ccd8a57a6e " width="30%" height="30%" />
+<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/646ba48c-387c-478d-960a-b4ccd8a57a6e " width="33%" height="33%" />
+<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/ab0e5d24-449a-4df2-bc24-84375c48c035" width="33%" height="33%" />
+<img src="https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/e3f34367-d528-4255-b2c4-7e2f12ee988a" width="33%" height="33%" />
 
-![IMG_6115](https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/646ba48c-387c-478d-960a-b4ccd8a57a6e ){: width="30%" height="30%"}
+>>처음 DB를 이용한 프로젝트를 구상하면서 OTT서비스의 컨텐츠 추천 시스템을 구상했고 구현하려 시도했다.
+여러 개의 아이디어는 선택에 도움을 줬다. 하지만 원하는 기능의 추가로 인하여 점점 처음과는 멀어지게 되는 경험을 했다.
+초기 선택과 너무 멀어진 프로젝트 내용을 바로 잡고자 OTT 서비스의 회원을 기준으로 한 기본적인 기능으로 선택을 고정시켰다.
 
-![IMG_6114](https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/ab0e5d24-449a-4df2-bc24-84375c48c035){: width="30%" height="30%"}
 
-![IMG_6113](https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/e3f34367-d528-4255-b2c4-7e2f12ee988a){: width="30%" height="30%"}
+
+
 
