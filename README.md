@@ -87,23 +87,12 @@ OTT 서비스를 사용하면서 높은 시청률을 보유한 컨텐츠들에 �
 System Architecture
 ======
 ```
- CREATE TABLE `Payment_info` (
+CREATE TABLE `Payment_info` (
 	`Phone_num`	int	NULL,
 	`id`	varchar(10)	NULL,
 	`name`	varchar(10)	NULL,
 	`card_num`	int	NULL,
 	`card_cmp`	Varchar(10)	NULL
-);
-
-CREATE TABLE `Movie` (
-	`c_category`	varchar(10)	NULL,
-	`m_name`	varchar(10)	NOT NULL	COMMENT '영화이름',
-	`m_genre`	varchar(10)	NOT NULL	COMMENT '영화 장르',
-	`m_director`	varchar(10)	NOT NULL	COMMENT '영화감독',
-	`m_nation`	varchar(20)	NOT NULL	COMMENT '영화 제작 국가',
-	`m_rate`	int	NOT NULL	COMMENT '영화 평점',
-	`m_run`	time	NOT NULL	COMMENT '영화 러닝 타임',
-	`m_open`	date	NOT NULL	COMMENT '영화 개봉일'
 );
 
 CREATE TABLE `User_info` (
@@ -130,7 +119,6 @@ CREATE TABLE `Bank` (
 );
 
 CREATE TABLE `Drama rating` (
-	`c_category`	varchar(10)	NULL,
 	`d_name`	varchar(10)	NULL,
 	`d_nation`	varchar(10)	NULL,
 	`rating`	int	NULL,
@@ -153,13 +141,24 @@ CREATE TABLE `record` (
 	`hitLastPoint`	smallint	NULL
 );
 
+CREATE TABLE `Movie` (
+	`m_name`	varchar(10)	NOT NULL	COMMENT '영화이름',
+	`m_genre`	varchar(10)	NOT NULL	COMMENT '영화 장르',
+	`m_director`	varchar(10)	NOT NULL	COMMENT '영화감독',
+	`m_nation`	varchar(20)	NOT NULL	COMMENT '영화 제작 국가',
+	`m_rate`	int	NOT NULL	COMMENT '영화 평점',
+	`m_run`	time	NOT NULL	COMMENT '영화 러닝 타임',
+	`m_open`	date	NOT NULL	COMMENT '영화 개봉일'
+);
+
+CREATE TABLE `mov_accu` (
+	`p_id`	VARCHAR(10)	NULL,
+	`genre`	VARCHAR(10)	NULL
+);
+
 ALTER TABLE `Payment_info` ADD CONSTRAINT `PK_PAYMENT_INFO` PRIMARY KEY (
 	`Phone_num`,
 	`id`
-);
-
-ALTER TABLE `Movie` ADD CONSTRAINT `PK_MOVIE` PRIMARY KEY (
-	`c_category`
 );
 
 ALTER TABLE `User_info` ADD CONSTRAINT `PK_USER_INFO` PRIMARY KEY (
@@ -172,10 +171,6 @@ ALTER TABLE `selected_Options table` ADD CONSTRAINT `PK_SELECTED_OPTIONS TABLE` 
 
 ALTER TABLE `Bank` ADD CONSTRAINT `PK_BANK` PRIMARY KEY (
 	`Phone_num`
-);
-
-ALTER TABLE `Drama rating` ADD CONSTRAINT `PK_DRAMA RATING` PRIMARY KEY (
-	`c_category`
 );
 
 ALTER TABLE `New` ADD CONSTRAINT `PK_NEW` PRIMARY KEY (
@@ -193,13 +188,6 @@ REFERENCES `User_info` (
 	`id`
 );
 
-ALTER TABLE `Movie` ADD CONSTRAINT `FK_New_TO_Movie_1` FOREIGN KEY (
-	`c_category`
-)
-REFERENCES `New` (
-	`c_category`
-);
-
 ALTER TABLE `selected_Options table` ADD CONSTRAINT `FK_User_info_TO_selected_Options table_1` FOREIGN KEY (
 	`id`
 )
@@ -212,13 +200,6 @@ ALTER TABLE `Bank` ADD CONSTRAINT `FK_Payment_info_TO_Bank_1` FOREIGN KEY (
 )
 REFERENCES `Payment_info` (
 	`Phone_num`
-);
-
-ALTER TABLE `Drama rating` ADD CONSTRAINT `FK_New_TO_Drama rating_1` FOREIGN KEY (
-	`c_category`
-)
-REFERENCES `New` (
-	`c_category`
 );
 
 ALTER TABLE `record` ADD CONSTRAINT `FK_User_info_TO_record_1` FOREIGN KEY (
@@ -235,9 +216,6 @@ Trigger 응용
 
 
 ```
-
-
-
 CREATE or replace TABLE mov_accu
 (	
 	p_id VARCHAR(10) PRIMARY key,
@@ -316,9 +294,6 @@ delimiter ;
 SELECT * FROM selected_Options;
 SELECT * FROM mov_accu;
 UPDATE selected_Options SET preferred_genre = '로맨스' WHERE id = 'TDS'; 
-
-
-
-
 ```
 
+![OTTERD](https://github.com/beyond-sw-camp/be01-1st-1Team-DB-OTT-Service/assets/125641153/6ac56896-4833-42c9-b499-831d942f119d)
